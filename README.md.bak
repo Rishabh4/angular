@@ -1,10 +1,10 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 Angular Frontend connected to a Spring Boot backend.
 
-The frontend is as simple as possible to just show the logic of authentication via a JWT & securing the request payload & decrypting the upcoming response from the backend.
+The frontend is as simple as possible to just show the logic of authentication via a JWT.
 
 
 ## Run on local
@@ -59,4 +59,3 @@ The JWT will be stored in the localstorage for further usage.
 
 When available the JWT will be sent in the Authorization Header for each requests made with axios.
 
-Axios will also behave as a interceptor that encrypts the request and decrypts the response coming from backend.

@@ -1,0 +1,42 @@
+<form *ngIf="!showTable" (ngSubmit)="onSubmit()" #yearForm="ngForm" class="form">
+  <mat-card appearance="outlined" class="year-card">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Year to fetch the football match details</mat-label>
+      <mat-select [(ngModel)]="year" name="year" required>
+        @for (year of years; track year) {
+          <mat-option [value]="year">{{year}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!year || isLoading">Submit</button>
+    <div *ngIf="isLoading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+  </mat-card>
+</form>
+
+<div *ngIf="showTable">
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef>{{ column==="competition" ? "Competetion Name" : (column==="team1" ? "Team 1" : (column==="team1goals" ? "Team 1 Goals" : (column==="team2" ? "Team 2" : (column==="team2goals" ? "Team 2 Goals" : "")))) }}</th>
+        <td mat-cell *matCellDef="let football">{{ football[column] }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <br/>
+  <mat-paginator #paginator
+    [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[5,10,25,100]"
+    (page)="handlePageChange($event)"
+    aria-label="Select page of footbal matches"
+    showFirstLastButtons
+  />
+
+  <button mat-raised-button color="primary" type="button" (click)="showTable = false" class="btn btn-primary btn-block mb-4">Back</button>
+</div>

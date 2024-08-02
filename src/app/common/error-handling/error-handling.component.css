@@ -1,0 +1,28 @@
+app-error-handling.ng-star-inserted {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.error-dialog-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.error-dialog-content {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  margin-right: 8px;
+}

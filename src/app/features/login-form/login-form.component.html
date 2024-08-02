@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+	<div class="col-4">
+	  <mat-tab-group>
+		  <mat-tab label="Login" >
+        <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+          <mat-card>
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput type="login" id="loginName" name="login" [(ngModel)]="login" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" id="loginPassword" name="password" [(ngModel)]="password" required>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Sign in</button>
+          </mat-card>
+        </form>
+      </mat-tab>
+
+      <mat-tab label="Register" >
+        <form (ngSubmit)="onSubmitRegister()" #registerForm="ngForm">
+          <mat-card class="mat-card">
+            <mat-form-field appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input matInput type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput type="text" id="login" name="login" [(ngModel)]="login" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" id="registerPassword" name="password" [(ngModel)]="password" required>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid">Register</button>
+          </mat-card>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

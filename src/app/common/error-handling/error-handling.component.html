@@ -1,0 +1,13 @@
+<h1 mat-dialog-title class="error-dialog-title">
+  <mat-icon class="mat-18" [ngStyle]="{'color':'red'}" aria-hidden="false" aria-label="Error Icon" fontIcon="error" />
+  Error Occurred
+</h1>
+<mat-dialog-content class="error-dialog-content">
+  <p>{{ data.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions class="button-container" align="end">
+  <button mat-fab extended mat-dialog-close color="primary">
+    <mat-icon>close</mat-icon>
+    Close
+  </button>
+</mat-dialog-actions>

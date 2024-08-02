@@ -1,0 +1,25 @@
+table {
+    width: 80%;
+}
+
+.full-width {
+    font-size: 14px;
+    width: 80%;
+}
+
+.year-card {
+  min-width: 500px;
+  align-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.table-container {
+  overflow: auto;
+  max-height: 380px;
+}

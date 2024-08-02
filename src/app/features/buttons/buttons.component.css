@@ -1,0 +1,6 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  gap: 24px; /* Adjust spacing as needed */
+}
